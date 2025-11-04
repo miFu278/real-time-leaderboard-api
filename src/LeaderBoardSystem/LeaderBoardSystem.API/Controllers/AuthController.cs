@@ -1,11 +1,13 @@
-﻿using LeaderboardSystem.Application.Auth.Commands.Login;
+﻿using Asp.Versioning;
+using LeaderboardSystem.Application.Auth.Commands.Login;
 using LeaderboardSystem.Application.Auth.Commands.Register;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LeaderboardSystem.API.Controllers
 {
-    [Route("api/[controller]")]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
     public class AuthController(IMediator mediator) : ControllerBase
     {
